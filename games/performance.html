@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Performance and Tuning</title>
+  </head>
+  <body>
+    <header>
+      <h1>Performance and Tuning</h1>
+      <p>Many games push platforms to their limits in terms of memory, rendering, and computation power to wow their audience. Initially, the Web platform was at a clear disadvantage here compared to native platforms, as it featured an interpreted scripting language (JavaScript) that ran in a monothread CPU-based environment and did not offer any access to the GPU. However, things have drastically improved on the Web in terms of performance in the past few years, allowing Web applications to take full advantage of available power and to measure performance to adjust parameters in real-time.</p>
+    </header>
+    <main>
+      <section class="featureset well-deployed">
+        <h2>Well-deployed technologies</h2>
+
+        <div data-feature="Multithreading">
+          <p>To guarantee a smooth experience no matter what and take advantage of available processing power, games typically split the work across multiple threads. <a data-featureid="webworkers">Web Workers</a> allow to run JavaScript code in the background. This is particularly useful to keep the user interface responsive by offloading the most resource-intensive operations into a background process.
+          </p>
+          <p><strong>Note:</strong> Due to <a href="https://meltdownattack.com/">Spectre</a>, support for the <code>SharedArrayBuffer</code> object, which allows to share memory between threads, has been temporarily removed from most Web browsers. As such communications between workers is mostly limited to message passing for the time being.</p>
+        </div>
+
+        <div data-feature="Timing hooks">
+          <p>The <a href="https://www.w3.org/webperf/">Web Performance Working Group</a> developed a number of specifications that expose timing hooks to Web applications, to analyze time spent doing various tasks. The <a data-featureid="hr-time">High-Resolution Time</a> exposes a monotonic sub-millisecond resolution clock to Web applications so that they can precisely measure time elapsed between two events. The <a data-featureid="performance-timeline">Performance Timeline</a> defines a unified interface to store and retrieve performance metric data. Individual performance metric interfaces are defined in separate specifications:</p>
+
+          <ul>
+            <li><a data-featureid="navigation-timing">Navigation Timing</a> exposes timing information related to navigation and elements;</li>
+            <li><a data-featureid="resource-timing">Resource Timing</a> exposes timing information for resources in a document;</li>
+            <li><a data-featureid="user-timing">User Timing</a> help applications measure the performance of their applications using high precision timestamps.</li>
+          </ul>
+        </div>
+
+        <div data-feature="Priority handling">
+          <p>The <a data-featureid="requestidlecallback">Cooperative Scheduling of Background Tasks specification</a> defines the <code>requestIdleCallback</code> method that allows scheduling an operation at the next opportunity when the app is not processing another operation.</p>
+        </div>
+
+        <div data-feature="Animation optimization">
+          <p>The <a data-featureid="animation-frames">Timing control for script-based animations API</a> can help reduce the usage of resources needed for playing animations.</p>
+        </div>
+      </section>
+
+      <section class="featureset in-progress">
+        <h2>Technologies in progress</h2>
+
+        <div data-feature="Low-level bytecode format">
+          <p>Games that require tight memory and processing controls are typically written in C++ (or equivalent). <a data-featureid="webassembly">WebAssembly</a> (Wasm) is a low-level bytecode format that runs with near-native speed in web browsers and supports compilation from C, C++, and other languages.  Most 3D game engines now support WebAssembly as a compilation target. Wasm makes it possible to reuse the same efficient codebase across platforms.</p>
+        </div>
+
+        <div data-feature="Network prioritization">
+          <p>The <a data-featureid="resource-hints">Resource Hints</a> and <a data-featureid="preload">Preload</a> specifications let developers optimize the download of resources by enabling to delay either the download or the execution of the downloaded resource.</p>
+        </div>
+
+        <div data-feature="Caching">
+          <p>The <a data-featureid="serviceworkers">Service Workers</a> specification defines a mechanism that allows applications to intercept outgoing network requests and respond to them directly. Applications can take advantage of this mechanism to implement a flexible cache logic directly and thus avoid lengthy requests to the server.</p>
+        </div>
+
+        <div data-feature="Timing hooks">
+          <p><a data-featureid="server-timing">Server Timing</a> enables a server to communicate performance metrics about the request-response cycle to the user agent, and allows applications to act on these metrics to optimize application delivery.</p>
+          <p>The <a data-featureid="longtasks">Long Tasks API</a> exposes a mechanism to detect long running tasks that monopolize the user interface's main thread for extended periods of time.</p>
+          <p>The <a data-featureid="paint-timing">Paint Timing</a> specification allows the application to capture a series of key moments such as first paint and first contentful paint during page load.</p>
+        </div>
+
+        <div data-feature="Rendering performance">
+          <p>To ensure optimal performance when animating parts of an app, developers can make use of the <a data-featureid="css-will-change">CSS <code>will-change</code></a> property to let browsers compute the animation ahead of its occurrence.</p>
+          <p>The CSS <a data-featureid="css-contain">contain</a> property can indicate that the element’s subtree is independent of the rest of the page. This also enables heavy optimizations by user agents when used well, in particular to skip over content that is off-screen knowing that it won't affect the rendering of the content that is on-screen.</p>
+        </div>
+
+        <div data-feature="Real-time communications">
+          <p>The <a data-featureid="webrtc-stats">Identifiers for WebRTC's Statistics API</a> defines a set of Web IDL objects that allow access to the statistical information about a RTCPeerConnection, allowing web apps to monitor the performance of the underlying network and media pipeline.</p>
+        </div>
+      </section>
+
+      <section class="featureset exploratory-work">
+        <h2>Exploratory work</h2>
+
+        <div data-feature="GPU computation">
+          <p>On top of for rendering, some games may also wish to take advantage of the GPU to run heavy computations. To some extent, this is already doable through <a data-featureid="webgl">WebGL</a>. The <a href="https://www.w3.org/community/gpu">GPU for the Web Community Group</a> is designing a new Web API to expose modern 3D graphics (first) and computation capabilities (afterwards) in a performant, powerful and safe manner, with a view to being agnostic of and compatible with existing native system platforms such as Direct3D, Metal, or Vulkan.</p>
+        </div>
+
+        <div data-feature="Multithreading">
+          <p>Coordination between threads may require the use of locks. The <a data-featureid="web-locks">Web Locks API</a> proposal describes a mechanism that allows scripts to asynchronously acquire a lock over a resource, hold it while work is performed, then release it.</p>
+        </div>
+
+        <div data-feature="Timing hooks">
+          <p>The work on the <a data-featureid="frame-timing">Frame Timing API</a> aims at providing detailed information on the frame-per-second obtained when an application is running on the user device.</p>
+
+          <p>The work on the <a data-featureid="event-timing">Event Timing Web Perf API</a> exposes a mechanism to measure the latency of some events triggered by user interaction.</p>
+        </div>
+
+        <div data-feature="Network prioritization">
+          <p>The <a data-featureid="priority-hints">Priority Hints</a> specification lets developers signal the priority of each resource they need to download, complementing existing browser loading primitives such as preload.</p>
+        </div>
+
+        <div data-feature="Animation optimization">
+          <p>The <a data-featureid="animation-worklet">CSS Animation Worklet API</a> provides a method to create scripted animations that control a set of animation effects. The API is designed to make it possible for user agents to run such animations in their own dedicated thread to provide a degree of performance isolation from main thread.</p>
+        </div>
+
+        <div data-feature="Scrolling optimization">
+          <p>User agents may implement default rules for scrolling such as scroll chaining and overscroll affordances that web applications may wish to disable to enhance <b>pull-to-refresh</b> and <b>infinite scrolling</b> interaction paradigms, which are common on mobile devices. This can be achieved through scripting, but negatively affects scrolling performances as the application needs to listen to touch events without setting the <code>passive</code> flag to override the default behavior when needed. The <a data-featureid="css-overscroll-behavior">CSS <code>overscroll-behavior</code></a> property introduces control over the behavior of a scroll container when its scrollport reaches the boundary of its scroll box, allowing web applications to disable default rules for scrolling efficiently.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Features not covered by ongoing work</h2>
+        <dl>
+          <dt>Artificial Intelligence (AI)</dt>
+          <dd>Many games implement a so-called game AI to generate intelligent behaviors for game characters that are not under the control of a real player. While the concept of AI in games is different from the notion of AI in other fields, a game AI may reuse similar techniques, e.g. based on machine learning, neural networks and other data mining algorithms. A sub-ideal solution to implement such algorithms in Web browsers is to use <a data-featureid="webassembly">WebAssembly</a> and <a data-featureid="webgl">WebGL</a>. An early proposal for a <a href="https://angelokai.github.io/WebML/">Base Machine Learning API</a> was made in October 2017 to expose more suitable primitives to Web applications, but has not yet led to standardization work in that field at W3C.</dd>
+        </dl>
+      </section>
+    </main>
+    <script src="../js/generate.js"></script>
+  </body>
+</html>

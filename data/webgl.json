@@ -1,0 +1,11 @@
+{
+  "url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/",
+  "status": "REC",
+  "impl": {
+    "caniuse": "webgl",
+    "chromestatus": 6049512976023552,
+    "edgestatus": "WebGL  (Canvas 3D)",
+    "mdn": "api.HTMLCanvasElement.webgl_context",
+    "webkitstatus": "specification-webgl-1"
+  }
+}

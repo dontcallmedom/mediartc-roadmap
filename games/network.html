@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Network and Communications</title>
+  </head>
+  <body>
+    <header>
+      <h1>Network and Communications</h1>
+      <p>Games need to access the network for a variety of reasons, including for downloading next level's assets, for bidirectional data transfers with the game's server, and for multiplayer communications in real-time. The Web platform is growing a number of APIs that facilitate establishing network connectivity in different contexts.</p>
+    </header>
+    <main>
+      <section class="featureset well-deployed">
+        <h2>Well-deployed technologies</h2>
+            
+        <div data-feature="HTTP network API">
+          <p>The <a data-featureid="fetch">Fetch API</a> provides a powerful Promise-based API to load content from Web servers using the HTTP and HTTPS protocols. It replaces the former <a data-featureid="xhr">XMLHttpRequest</a> API, which was at the heart of Ajax development (XMLHttpRequest may still be used).</p>
+        </div>
+            
+        <div data-feature="Cross-domain requests">
+          <p>By default, browsers do not allow to make request across different domains (or more specifically, across different origins, a combination of the protocol, domain and port) from a single Web page; this rule protects users from having a Web site abusing their credentials and stealing their data on another Web site. Sites can opt-out of that rule by making use of the <a data-featureid="cors">Cross-Origin Resource Sharing</a> (CORS) mechanism, opening up much wider cooperation across Web applications and services. Note the W3C version of the CORS specification does not reflect current implementations and will be obsoleted. The CORS mechanism is now a core part of the on-going <a href="https://fetch.spec.whatwg.org/">Fetch specification</a> in the WHATWG.</p>
+        </div>
+            
+        <div data-feature="Server-pushed requests">
+          <p>XMLHttpRequest is useful for client-initiated network requests, but mobile devices with their limited network capabilities and the cost that network requests induce on their battery (and sometimes on their users bill) can often make better use of server-initiated requests. The <a data-featureid="eventsource">Server-Sent Events API</a> allows triggering DOM events based on push notifications (via HTTP and other protocols).</p>
+        </div>
+            
+        <div data-feature="Bidirectional connections">
+          <p>The <a data-featureid="websockets">WebSocket API</a>, built on top of the <a href="https://tools.ietf.org/html/rfc6455">IETF WebSocket protocol</a> (RFC6455), offers a bidirectional, more flexible, and less resource intensive network connectivity than fetch and XMLHttpRequest.</p>
+        </div>
+
+        <div data-feature="Offline detection">
+          <p>Of course, an important part of using network connectivity relies on being able to determine if such connectivity exists, and the type of network available. The <a data-featureid="online">HTML5 <code>onLine</code> DOM flag</a>, and its associated change event, <code>online</code>, signals when network connectivity is <i>not</i> available to the Web environment (note the flag is unreliable to assert that the Web environment is online).</p>
+        </div>
+
+        <div data-feature="Network characteristics">
+          <p>The <a data-featureid="resource-timing">Resource Timing API</a> allows to measure the impact of the network on the time needed to load various resources, offering another approach to adapt a Web app to its networking environment.</p>
+        </div>
+      </section>
+
+      <section class="featureset in-progress">
+        <h2>Technologies in progress</h2>
+        <div data-feature="Peer-to-peer communications">
+          <p>The work on <a data-featureid="p2p">Web Real-Time Communications</a> provides direct <strong>peer-to-peer connections</strong> between browsers with real-time characteristics, ideal to manage in-game communication in multiplayer games. Streams exchanged may include data, audio, and video tracks. WebRTC may also be used to communicate with the game's server, effectively replacing the WebSocket API.</p>
+        </div>
+
+        <div data-feature="Low-level I/O">
+          <p>The <a data-featureid="streams">Streams</a> specification provides APIs for creating, composing, and consuming streams of data efficiently. Network conditions may fluctuate in mobile networks and bandwidth may be restricted; access to low-level I/O primitives enable flow control within Web applications to adjust the network delivery to some reader's speed (e.g. a media player), and perceived rendering performance improvements, e.g. when a Service Worker assembles a stream from content previously cached and content fetched online to speed up the first set of render operations of a page. The ability to cancel a stream to stop download at any time also helps reclaim network bandwidth for other tasks as soon as needed.</p>
+        </div>
+
+        <p data-feature="HTTP network API">The <a data-featureid="beacon">Beacon API</a> aims at letting developers queue unsupervised HTTP requests, leaving it to the browser to execute them when appropriate, opening the door for better network optimizations.</p>
+
+        <div data-feature="Server-pushed requests">
+          <p>The <a data-featureid="push">Push API</a> allows Web applications to receive server-sent messages whether or not the said Web app is active in a browser window. The <a href="https://datatracker.ietf.org/wg/webpush/documents/">IETF Web-Based Push Notifications Working Group</a> developed a companion protocol suitable to request the delivery of a push message to a user agent, create new push message delivery subscriptions, and monitor for new push messages (<a href="https://tools.ietf.org/html/rfc8030">RFC 8030</a>).</p>
+        </div>
+      </section>
+
+      <section class="featureset exploratory-work">
+        <h2>Exploratory work</h2>
+        <p>Early work on a <a data-featureid="background-sync">Web Background Synchronization API</a> would provide a robust Service Worker-based mechanism to enable Web applications to download and upload content in the background, even in the absence of a running browser.</p>
+
+        <div data-feature="Network characteristics">
+          <p>Discontinued work on the <a data-featureid="netinfo">Network Information API</a> to address discovery of the network characteristics has now been resumed in the Web Platform Incubator Community Group.</p>
+        </div>
+      </section>   
+    </main>
+    <script src="../js/generate.js"></script>
+  </body>
+</html>

@@ -87,6 +87,11 @@ const publishers = {
     label: 'International Organization for Standardization (ISO)',
     url: 'https://www.iso.org/',
     urlPattern: 'iso.org'
+  },
+  'Khronos': {
+    label: 'Khronos Group',
+    url: 'https://www.khronos.org/',
+    urlPattern: 'www.khronos.org/registry/'
   }
 };
 

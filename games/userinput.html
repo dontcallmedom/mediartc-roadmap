@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>User Interaction</title>
+  </head>
+  <body>
+    <header>
+      <h1>User Interaction</h1>
+      <p>By definition, games are interactive. That interactivity has taken the form of various game controllers over the years, including mouses and keyboards, touch screens, joysticks, gamepads, pointing devices, and dedicated objects such as guitars, wheels, or dance mat pads. Connected objects of all kinds that use Near-field Communications (NFC) or Bluetooth are also being used to make the game more tangible to players. Last but not least, various games and platforms are exploring natural interaction mechanisms&mdash;motion detection, voice interaction, eye tracking&mdash;to further bridge reality and fiction.</p>
+      <p>The Web platform tries to accommodate all these input devices. When possible, it tries to abstract away from the exact user input mechanism, both as a way to enable the use of new controllers with existing content, as well as to address accessibility issues that some controllers may raise.</p>
+    </header>
+    <main>
+      <section class="featureset well-deployed">
+        <h2>Well-deployed technologies</h2>
+        <div data-feature="Touch-based interactions">
+          <p>An increasing share of mobile devices relies on touch-based interactions. While the traditional interactions recognized in the Web platform (keyboard, mouse input) can still be applied in this context, a more specific handling of touch-based input is a critical aspect of creating well-adapted user experiences, which <a data-featureid="touchevent">Touch Events in the DOM</a> (Document Object Model) enable.</p>
+        </div>
+
+        <div data-feature="Media capture">
+          <p>The <a data-featureid="getusermedia">Media Capture and Streams API</a> gives access to cameras and microphones that games may use for various purposes, including as an input controller (e.g. user makes specific sounds to control game actions), an interaction mechanism (e.g. users have to put a specific object/barcode in front of the camera), contextual information (e.g. in Augmented Reality scenarios to render the user's surrounding in the background), or simply for cross-player communication purposes.</p>
+        </div>
+
+        <div data-feature="Sensors">
+          <p>The <a data-featureid="geolocation">Geolocation API</a> provides a common interface for locating the device, independently of the underlying technology (GPS, Wi-Fi networks identification, triangulation in cellular networks, etc.).</p>
+
+          <p>The <a data-featureid="deviceorientation">DeviceOrientation Event Specification</a> defines several DOM events that provide information about the physical orientation and motion of a hosting device. Most browsers support this specification, although various interoperability issues have arised. The work on the specification itself has been discontinued when the Geolocation Working Group was closed. The <a href="https://www.w3.org/das/">Devices and Sensors Working Group</a> is now chartered to reduce inconsistencies across implementations and finalize the specification accordingly, and develop the more powerful <a href="https://w3c.github.io/orientation-sensor/">Orientation Sensor</a> specification in parallel.</p>
+        </div>
+
+        <p data-feature="Vibration">The <a data-featureid="vibration">Vibration API</a> lets game developers take advantage of haptic feedback to create new forms of interactions.</p>
+
+        <div data-feature="Accessibility">
+          <p>The <a data-featureid="uaag20">User Agent Accessibility Guidelines (UAAG) 2.0</a> note defines principles and guidelines for user agents to design an accessible user agent interface and communicate with assistive technologies. The supporting document <a data-featureid="uaag20-reference">UAAG 2.0 Reference</a> explains the intent and best practices of UAAG 2.0 success criteria, and lists numerous examples for each of them.</p>
+          <p>Following the <a data-featureid="wcag21">Web Content Accessibility Guidelines (WCAG) 2.1</a> will make content accessible to a wider range of people with disabilities. The 2.1 revision adds new success criteria and guidelines to version 2.0, including new criteria related to user input that have a specific resonance in games, such as the <a href="https://www.w3.org/TR/WCAG21/#pointer-gestures">Pointer Gestures</a> and <a href="https://www.w3.org/TR/WCAG21/#target-size">Target Size</a> criteria.</p>
+          <p>Web content developers may benefit from authoring tools that follow the <a data-featureid="atag20">Authoring Tool Accessibility Guidelines (ATAG) 2.0</a> standard, which provides guidelines for designing Web content authoring tools that are both more accessible to authors with disabilities and that help design content that conforms to WCAG.</p>
+          <p>The <a data-featureid="wai-aria11">Accessible Rich Internet Applications (WAI-ARIA) 1.1</a> standard provides an ontology of roles, states, and properties that define the semantics of user interface elements and that can be used to improve the accessibility and interoperability of Web content and applications. The <a data-featureid="core-aam11">Core Accessibility API Mappings 1.1</a> standard describes how user agents should expose these semantics to accessibility APIs.</p>
+        </div>
+      </section>
+
+      <section class="featureset in-progress">
+        <h2>Technologies in progress</h2>
+
+        <div data-feature="Game controllers">
+          <p>The <a data-featureid="gamepad">Gamepad</a> specification defines a low-level interface that exposes gamepad devices attached to the browsing device.</p>
+          <p>The <a data-featureid="webxr">WebXR Device API</a> exposes VR/AR-specific input, including tracked controller state and hand gesture.</p>
+        </div>
+
+        <div data-feature="Touch-based interactions">
+          <p>The <a href="https://www.w3.org/2012/pointerevents/">Pointer Events Working Group</a> has made good progress on an alternative approach to handle user input, <a data-featureid="pointer-events">Pointer Events</a>, that allows to handle mouse, touch and pen events under a single model. It provides a complementary and more unified  approach to the currently more widely deployed Touch Events.</p>
+          <p>In particular, the <a data-featureid="css-touch-action">CSS property <code>touch-action</code></a> that lets filter gesture events on elements is gaining traction beyond implementations of Pointer Events.</p>
+          <p>The early proposal for an <a data-featureid="inputdevice">Input Device capabilities API</a> would provide information about whether a given “mouse” event comes from a touch-capable device.</p>
+        </div>
+
+        <div data-feature="Sensors">
+          <p>The <a data-featureid="generic-sensor">Generic Sensor API</a> defines a framework for exposing sensor data to the Web platform in a consistent way. In particular, the specification defines a blueprint for writing specifications of concrete sensors along with an abstract <code>Sensor</code> interface that can be extended to accommodate different sensor types.</p>
+
+          <p>A number of sensor APIs are being built on top of the Generic Sensor API. The <a data-featureid="proximity">Proximity Sensor</a> specification defines an API to monitor the presence of nearby objects without physical contact. The <a data-featureid="ambientlight">Ambient Light Sensor</a> specification defines an API to monitor the ambient light level or illuminance of the device's environment..</p>
+
+          <p>The detection of motion is made possible by a combination of low-level and high-level motion sensor specifications, also built on top of the Generic Sensor API:</p>
+
+          <ul>
+            <li>the <a data-featureid="accelerometer">Accelerometer</a> to obtain information about acceleration applied to the device's local three primary axes;</li>
+            <li>the <a data-featureid="gyroscope">Gyroscope</a> to monitor the rate of rotation around the device's local three primary axes;</li>
+            <li>the <a data-featureid="magnetometer">Magnetometer</a> to measure magnetic field around the device's local three primary axes;</li>
+            <li>the <a data-featureid="orientation">Orientation Sensor</a> to monitor the device's physical orientation in relation to a stationary 3D Cartesian coordinate system.</li>
+          </ul>
+
+          <p>The <a href="https://www.w3.org/TR/motion-sensors/">Motion Sensors Explainer</a> document is an introduction to low-level and high-level motion sensors, their relationship, inner workings and common use-cases.</p>
+
+          <p>The <a data-featureid="geolocation-sensor">Geolocation Sensor</a> is an API for obtaining geolocation reading from the hosting device. The feature set of the Geolocation Sensor is similar to that of the Geolocation API, but it is surfaced through the Generic Sensor API, improves security and privacy, and is extensible.</p>
+        </div>
+
+        <div data-feature="Media capture">
+          <p>As depth-sensing cameras come to the market, the <a data-featureid="3dcamera">Media Capture Depth Stream Extensions</a> allows capturing of the additional dimension in information they produce.</p>
+          <p>Game players enjoy recording and sharing their performance on social networks. The <a data-featureid="domcapture">Media Capture from DOM elements</a> API lets games turn content rendered in the application into a media stream for recording or transmission. More generally, content produced by any other application (or the whole display) can also be turned into such a stream via the <a data-featureid="screencapture">Screen Capture API</a>.</p>
+          <p>Any media content captured, generated or received as a stream can be recorded via the <a data-featureid="recording">Media Recorder API</a>.</p>
+          <p>The <a data-featureid="imagecapture">Mediastream Image Capture</a> specification caters for more advanced usage of cameras that offer still-pictures settings (e.g. to control zoom or white-balance).</p>
+        </div>
+
+        <div data-feature="Screen wake lock">
+          <p>Whether players are speaking commands to the game or interacting with them through non-haptic mechanisms, they risk seeing the screens turned off automatically by their devices screensaver. The <a data-featureid="wake-lock">Wake Lock API</a> lets developers signal the needs to keep the screen up in these circumstances.</p>
+        </div>
+      </section>
+
+      <section class="featureset exploratory-work">
+        <h2>Exploratory work</h2>
+
+        <div data-feature="Interactions with physical objects">
+          <p>Games may want the user to interact with physical objects to improve the experience. The <a href="http://w3c.github.io/web-nfc/" data-featureid="webnfc">Web Near-Field Communications (NFC) API</a> enables wireless communication between two devices at close proximity. Similarly, the <a data-featureid="webbluetooth">Web Bluetooth</a> specification describes an API to discover and communicate with devices over the Bluetooth Low Energy (BLE) mode.</p>
+        </div>
+
+        <div data-feature="Object recognition">
+          <p>Detecting specific objects from a video stream is hard and CPU-intensive. Beyond traditional video processing, modern GPUs often provide advanced vision processing capabilities (e.g. face and objects recognition) that would have direct applicability e.g. in augmented reality applications. The <a data-featureid="shape-detection">Shape Detection API</a> is exploring this space.</p>
+        </div>
+
+        <p data-feature="Speech-based interactions">Mobile devices are also in many cases well-suited to be used through voice-interactions; the <a href="https://www.w3.org/community/speech-api/">Speech API Community Group</a> developed a JavaScript API to enable interactions with a Web page through spoken commands. <a data-featureid="speech-api/synthesis">Speech synthesis</a> is well supported across browsers. Support for <a data-featureid="speech-api/recognition">speech recognition</a> is still underway.</p>
+
+        <p data-feature="Input method">The <a data-featureid="ime-api">Input Method Editor (IME) API</a> provides Web applications with scripted access to an IME (input-method editor) associated with a hosting user agent. Editorial support is required for this specification to move forward.</p>
+      </section>
+
+      <section>
+        <h2>Features not covered by ongoing work</h2>
+        <dl>
+          <dt>Gesture events</dt>
+          <dd>As mentioned above, touch-based interaction is common on mobile devices and available to Web applications through <a data-featureid="touchevent">Touch events</a>. <strong>Gesture-based interaction</strong>, which includes pinching, rotating and swiping, is also a common interaction paradigm on mobile devices. Web developers may derive gesture events from touch events to some extent, but may have to develop multiple versions for different browsers. Native support for these interactions would reduce fragmentation and improve performance. Early discussions to define <a href="https://github.com/JuntaoPeng/GestureEvents/blob/master/GestureEvents.md#gesture-events">Gesture events</a> have started in the <a href="https://www.w3.org/community/mwma/">Merging of Web and Mobile APP Community Group</a>.</dd>
+        </dl>
+      </section>
+
+      <section>
+        <h2>Discontinued features</h2>
+        <dl>
+          <dt>Intent-based events</dt>
+          <dd>As the Web reaches new devices, and as devices gain new user interactions mechanisms, it seems useful to allow Web developers to react to a more abstract set of user interactions: instead of having to work in terms of “click”, “key press”, or “touch event”, being able to react to an “undo” command, or a “next page” command independently of how the user instructed it to the device. The <a data-featureid="indie-ui-events">IndieUI Events</a> specification was an attempt to address this need. The work has been discontinued for now, due to lack of support from would-be implementers.</dd>
+        </dl>
+      </section>
+    </main>
+    <script src="../js/generate.js"></script>
+  </body>
+</html>

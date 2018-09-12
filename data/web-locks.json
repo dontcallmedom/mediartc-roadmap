@@ -1,0 +1,8 @@
+{
+  "url": "https://wicg.github.io/web-locks/",
+  "title": "Web Locks API",
+  "impl": {
+    "chromestatus": 5712361335816192,
+    "mdn": "api.Navigator.locks"
+  }
+}

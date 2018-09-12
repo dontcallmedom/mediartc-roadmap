@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Payment and Services</title>
+  </head>
+  <body>
+    <header>
+      <h1>Payment and Services</h1>
+      <p>Native mobile application stores have made it much easier for developers to monetize some of their applications, either by selling the application itself to users, or by providing in-app purchases. This capacity comes at a cost as part of the money goes directly to application stores.</p>
+      <p>Payments on the Web have always been doable but process was tedious. New technologies are now streamlining payments on the Web. The icing on the cake is that application stores are not mandatory on the Web and payment services do not need to go through such intermediaries.</p>
+    </header>
+    <main>
+      <section class="featureset well-deployed">
+        <h2>Well-deployed technologies</h2>
+
+        <p data-feature="Autocomplete">HTML provides specific help for <a data-featureid="autocomplete">autocomplete of credit card details</a> (through the <code>cc-<em>xxx</em></code> autocomplete tokens), making it easier to pay via credit cards once these details have been entered once.</p>
+      </section>
+
+      <section class="featureset in-progress">
+        <h2>Technologies in progress</h2>
+
+        <p>Following a successful <a href="https://www.w3.org/2013/10/payments/">workshop on Web payments</a> in 2014 and discussions on <a href="https://www.w3.org/TR/web-payments-use-cases/">use cases and priorities for Web payments</a> in the <a href="https://www.w3.org/Payments/IG/">Web Payment Interest Group</a>, W3C <a href="https://www.w3.org/Payments/WG/charter-201510.html">chartered a Web Payments Working Group</a> to develop browser APIs to facilitate payment operations in Web applications:</p>
+
+        <ul data-feature="Web Payment">
+          <li>The <a data-featureid="payment-request">Payment Request API</a> defines an API to allow merchants (i.e. web sites selling physical or digital goods) to utilize one or more payment methods with minimal integration. In this model, browsers facilitate the payment flow between merchant and user.</li>
+          <li>The <a data-featureid="payment-method-id">Payment Method Identifiers</a> specification defines payment method identifiers and how they are validated, and, where
+          applicable, minted and formally registered with the W3C.</li>
+          <li>The <a data-featureid="payment-method-manifest">Payment Method Manifest</a> specification defines a machine-readable manifest file that describes default payment applications that are associated with a given payment method, as well as the list of origins that are permitted to provide payment applications for this payment method.</li>
+          <li>The <a data-featureid="payment-method-basic-card">Payment Method: Basic Card</a> specification describes data structures that enable the use of debit, credit, or prepaid cards in the Payment Request API.</li>
+          <li>The <a data-featureid="payment-handler">Payment Handler API</a> defines a standard way to initiate payment requests from Web pages and applications.</li>
+        </ul>
+      </section>
+    </main>
+    <script src="../js/generate.js"></script>
+  </body>
+</html>

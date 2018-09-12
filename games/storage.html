@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Data Storage</title>
+  </head>
+  <body>
+    <header>
+      <h1>Data Storage</h1>
+      <p>A critical component of many games is the ability to save state and game assets to speed up loading times and ensure continuity when the game is played offline.</p>
+    </header>
+    <main>
+      <section class="featureset well-deployed">
+        <h2>Well-deployed technologies</h2>
+        <p data-feature="Simple data storage">For simple data storage, the <a data-featureid="webstorage">Web Storage</a> specification offers two basic mechanisms, <code>localStorage</code> and <code>sessionStorage</code>, that can preserve data respectively indefinitely, or on a browser-session basis.</p>
+
+        <p data-feature="Database query/update">The <a data-featureid="indexeddb">Indexed Database API</a> (IndexedDB) defines a database of values and hierarchical objects that integrates naturally with JavaScript, and can be queried and updated very efficiently - a <a href="https://w3c.github.io/IndexedDB/">third edition of the specification</a> is under development.</p>
+
+        <p data-feature="Encrypted storage">Some of the data may need to be encrypted, the <a data-featureid="crypto">Web Cryptography API</a> exposes strong cryptography primitives to Web applications, and can be bound to pre-provisioned keys via the <a data-featureid="cryptokey">WebCrypto Key Discovery</a> API.</p>
+
+        <p data-feature="File download">The <a data-featureid="html5-download">HTML5 <code>download</code> attribute</a> provides a simple mechanism to trigger a file download (rather than a page navigation), with the possibility of setting a user-friendly filename.</p>
+      </section>
+      <section class="featureset in-progress">
+        <h2>Technologies in progress</h2>
+
+        <div data-feature="File operations">
+          <p>The <a data-featureid="fileapi">File API</a> makes it possible to load the content of a file, for richer interactions with the file system. However, note discussions on a sandboxed filesystem API that could have allowed to write files onto a sandboxed file system have halted for lack of interest.</p>
+        </div>
+      </section>
+
+      <section class="featureset exploratory-work">
+        <h2>Exploratory work</h2>
+
+        <p data-feature="Quota for storage">As more and more data need to be stored by the browser (e.g. for offline usage), it becomes critical for developers to get reliable storage space. The proposed <a data-featureid="storage">Storage</a> specification will allow Web applications to get quota estimate for storage as well as to request that the data stored by the application be treated as persistent and cannot be evicted without the user’s explicit consent.</p>
+      </section>
+
+      <section>
+        <h2>Discontinued features</h2>
+        <dl>
+          <dt>Quota management API</dt>
+          <dd>Work on the <a data-featureid="quota">Quota Management API</a>, started in the Web Platform Working Group to expose an API to manage usage and availability of local storage resources, was discontinued in favor of the newer <a data-featureid="storage">Storage</a> proposal.</dd>
+
+          <dt>Client-side SQL-based database</dt>
+          <dd>The work around a <a data-featureid="websql">client-side SQL-based database</a>, which had been started in 2009, has been abandoned in favor of the work on IndexedDB.</dd>
+
+          <dt>Address book data</dt>
+          <dd>Communication applications can benefit from integrating with their users’ existing data records; on mobile devices, the address book is a particularly useful source of information. For Web apps outside of the browser, a purely programmatic approach was part of the <a href="https://www.w3.org/2012/05/sysapps-wg-charter.html">System Applications Working Group</a>; since this group has now closed, no further work on the <a data-featureid="contacts-sys">Contacts Manager API</a> is expected for the time being. Within the browser, HTML provides <a data-featureid="autocomplete">autocompleted fields for contacts information</a> that would let browsers re-use data from address books.</dd>
+        </dl>
+      </section>
+    </main>
+    <script src="../js/generate.js"></script>
+  </body>
+</html>

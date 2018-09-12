@@ -1,0 +1,55 @@
+{
+  "title": "Games on the Web Roadmap",
+  "discourse": {
+    "category": "W3C’s discourse forum",
+    "url": "https://discourse.wicg.io/"
+  },
+  "github": "https://github.com/w3c/web-roadmaps",
+  "pages": [
+    {
+      "url": "performance.html",
+      "title": "Performance",
+      "icon": "../assets/img/media-processing.svg",
+      "description": "Mechanisms to harness available power (memory, computation, rendering)."
+    },
+    {
+      "url": "rendering.html",
+      "title": "Rendering",
+      "icon": "../assets/img/mobile-graphics.svg",
+      "description": "Features needed to render the game's user interface and audio environment."
+    },
+    {
+      "url": "userinput.html",
+      "title": "User Interaction",
+      "icon": "../assets/img/mobile-userinput.svg",
+      "description": "Features needed to engage the user through device-specific interaction mechanisms and guarantee the accessibility of these interactions."
+    },
+    {
+      "url": "network.html",
+      "title": "Network and Communications",
+      "icon": "../assets/img/mobile-network.svg",
+      "description": "Interactions with the network to fetch resources and communicate between peers, e.g. to enable multi-player games."
+    },
+    {
+      "url": "lifecycle.html",
+      "title": "Progressive Web Applications (PWA)",
+      "icon": "../assets/img/mobile-lifecycle.svg",
+      "description": "Mechanisms to integrate the application with the rest of the system and provide a native-like experience."
+    },
+    {
+      "url": "storage.html",
+      "title": "Data Storage",
+      "icon": "../assets/img/mobile-storage.svg",
+      "description": "Technologies available to save state and game assets."
+    },
+    {
+      "url": "payment.html",
+      "title": "Payment and Services",
+      "icon": "../assets/img/mobile-payment.svg",
+      "description": "Features needed to monetize a game, e.g. by integrating easy-to-use in-app purchases."
+    }
+  ],
+  "about": {
+    "url": "about.html"
+  }
+}

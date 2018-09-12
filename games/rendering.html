@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Rendering</title>
+  </head>
+  <body>
+    <header>
+      <h1>Rendering</h1>
+      <p>Games are graphical in essence and need precise control over the content rendered, be it on screen or on output audio devices. The Web platform provides the ability to draw/manipulate 2D/3D graphics, as well as to render spatialized audio content. Games may of course also leverage <a href="https://www.w3.org/html/">HTML</a> and <a href="https://www.w3.org/Style/CSS/">CSS</a> (Cascading Style Sheets) to control the layout of their user interface.</p>
+    </header>
+    <main>
+      <section class="featureset well-deployed">
+        <h2>Well-deployed technologies</h2>
+
+        <div data-feature="2D/3D graphics">
+          <p>The HTML <strong><code>&lt;canvas&gt;</code></strong> element can be used to draw graphics via scripting. The element may be used to render 2D graphics through the <a data-featureid="canvas">2D programmatic API</a>, and 3D graphics through <a data-featureid="webgl">WebGL</a>, a technology developed outside of W3C by the <a href="https://www.khronos.org/">Khronos Group</a>.</p>
+
+          <p>Vector graphics can also be rendered using <a data-featureid="svg11">SVG</a> (Scalable Vector Graphics), an XML-based markup language to describe two-dimensions vector graphics. Since these graphics are described as a set of geometric shapes, they are well-suited to create interfaces that can be zoomed in/out. SVG objects can also easily be animated, enabling the creation of very advanced and slick user interfaces.</p>
+        </div>
+
+        <div data-feature="Viewport control">
+          <p>Another important aspect for games is the possibility to use the entire screen to display the user interface; the <a data-featureid="fullscreen">Fullscreen API</a> allows to request and detect full screen display.</p>
+        </div>
+        
+        <div data-feature="Audio rendering">
+          <p>The <a data-featureid="webaudio">Web Audio API</a> provides a low latency audio processing and synthesizing API that games can use to render audio precisely. The API supports a number of features, including spatialized audio mechanisms and a convolution engine for a wide range of linear effects. A declarative approach, based on the HTML <code>&lt;audio&gt;</code> element may be used for scenarios that do not require tight controls over audio rendering, e.g. for background music.</p>
+        </div>
+
+        <div data-feature="Animations">
+          <p>Animations can be described declaratively via <a data-featureid="css-animations">CSS Animations</a> and <a data-featureid="css-transitions">CSS Transitions</a>.</p>
+          <p>Scripted animations can be resource intensive, especially on constrained devices. The possibility offered by the <a data-featureid="animation-frames">Animation Frames</a> to manage the rate of updates to animations can help to keep them under control.</p>
+        </div>
+
+        <div data-feature="Graphical effects">
+          <p>Features in CSS 3 and beyond define simple yet powerful features to create graphical effects, such as <a data-featureid="css-border-radius">rounded corners</a>, <a data-featureid="css-box-shadow">shadow effects</a>, and <a data-featureid="css-2d">rotated content</a>.</p>
+          <p>Various layout modes may also be used to create user interfaces that adapt to the user's device, including <a data-featureid="css-flexbox">CSS Flexbox</a> and <a data-featureid="css-grid-1">CSS Grid</a>, that make it possible to preserve a clear separation between the content itself (HTML, SVG) and its layout by allowing re-ordering of elements on screen, without having to change the underlying HTML.</p>
+        </div>
+
+        <div data-feature="Downloadable fonts">
+          <p>Fonts play also an important role in building appealing graphical interfaces. <a data-featureid="woff2">WOFF</a> (Web Open Font Format) makes it easy to use fonts that are automatically downloaded through style sheets, while keeping the size of the downloaded fonts limited to what the game actually needs.</p>
+        </div>
+      </section>
+
+      <section class="featureset in-progress">
+        <h2>Technologies in progress</h2>
+        <div data-feature="Animations">
+          <p>Animations can also be managed via scripting through the API exposed in <a data-featureid="web-animations">Web Animations</a>.</p>
+        </div>
+      </section>
+
+      <section class="featureset in-progress">
+        <h2>Exploratory work</h2>
+        <div data-feature="VR/AR rendering">
+          <p>The <a data-featureid="webxr">WebXR Device API</a> specification is a low-level API that allows applications to access and control head-mounted displays (HMD) using JavaScript to create compelling Virtual Reality (VR) / Augmented Reality (AR) experiences. While the API should still be considered unstable at this stage, note main browsers implement at least a subset of it, or of the previous <a data-featureid="webvr">WebVR specification</a>, making it possible to develop Web-based VR/AR games today.</p>
+        </div>
+
+        <div data-feature="3D graphics">
+          <p>Within W3C, the <a href="https://www.w3.org/community/gpu/">GPU for the Web Community Group</a> is designing a new Web API to expose modern 3D graphics capabilities in a performant, powerful and safe manner, with a view to being agnostic of and compatible with existing native system platforms such as Direct3D, Metal, or Vulkan. Longer term, this proposal should also expose GPU computation capabilities to Web applications.</p>
+        </div>
+
+        <div data-feature="Rendering in workers">
+          <p>Web workers do not have access to the DOM and cannot directly render content on screen. The <a data-featureid="offscreencanvas"><code>OffscreenCanvas</code> interface</a> in HTML makes it possible to create rendering context with no connection to the DOM, and in particular to do that in workers.</p>
+        </div>
+      </section>
+    </main>
+    <script src="../js/generate.js"></script>
+  </body>
+</html>

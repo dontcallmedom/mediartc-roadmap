@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Progressive Web Applications</title>
+  </head>
+  <body>
+    <header>
+      <h1>Progressive Web Applications</h1>
+
+      <p>An important aspect of Web gaming experiences is linked to how the game integrates with the rest of the system to provide a native-like experience that features a responsive user interface that is permanently available, even when offline, installable on the user's home screen, and re-engageable (meaning that it is easy to push notifications to the user to re-engage her into the game).</p>
+
+      <p>These notions are part of the overall <strong>application lifecycle</strong>: how applications get installed, shown to the user in applications list, started, stopped, woken up from remote notifications, synced up when the device goes on-line. They form the backbone of <strong>Progressive Web Applications</strong> (PWA).</p>
+    </header>
+    <main>
+      <section class="featureset well-deployed">
+        <h2>Well-deployed technologies</h2>
+
+        <div data-feature="Foreground detection">
+          <p>The <a data-featureid="page-visibility">Page Visibility</a> specification lets developers detect when their application is in the foreground, and thus adapt their operations and resource consumption accordingly.</p>
+        </div>
+
+        <p data-feature="Notification">Mobile devices follow their users everywhere, and many mobile users rely on them to remind them or notify them of events, such as messages: the <a data-featureid="notifications">Web Notifications</a> specification enables that feature in the Web environment.</p>
+      </section>
+
+      <section class="featureset in-progress">
+        <h2>Technologies in progress</h2>
+
+        <div data-feature="Screen wake lock">
+          <p>Games may want to engage their users for a relatively long period of time. The <a data-featureid="wake-lock">Wake Lock API</a> lets developers signal the needs to keep the screen up in these circumstances, avoiding situations where the screen gets turned off by mistake to save battery.</p>
+        </div>
+
+        <div data-feature="Packing">
+          <p>Whether packaged or not, users rely on a variety of metadata (name, icons) to identify the apps they want to use among their list of regularly used applications. The <a data-featureid="appmanifest">Web App Manifest</a> specification lets developers group all these metadata into a single JSON file.</p>
+        </div>
+
+        <div data-feature="Offline Web apps">
+          <p>The <a data-featureid="serviceworkers">Service Workers</a> specification describes a method that enables applications to take advantage of persistent background processing, opening the door to running applications offline.</p>
+          <p>Not only does Service Workers enables Web applications to work seamlessly offline or in poor network conditions, it also creates a model for Web applications to operate when they have not been opened in a browser window, or even if the browser itself is not running. That ability opens the door for Web applications that run in the background and can react to remotely triggered events.</p>
+        </div>
+
+        <div data-feature="Notifications">
+          <p>The <a data-featureid="push">Push API</a> enables Web applications to subscribe to remote notifications that, upon reception, wake them up. Native applications have long enjoyed the benefits of greater user engagement that these notifications bring.</p>
+        </div>
+
+        <div data-feature="Background execution">
+          <p>The <a data-featureid="background-sync">Web Background Synchronization</a> specification builds on top of Service Workers to enable Web applications to keep their user data up to date seamlessly, by running network operations in the background, adjusting to possibly unreliable connections that users often experience on mobile devices.</p>
+        </div>
+      </section>
+
+      <section class="featureset exploratory-work">
+        <h2>Exploratory work</h2>
+
+        <div data-feature="Packing">
+          <p>The <a data-featureid="packaging">Web Packaging</a> document describes use cases for a new package format for web sites and applications and outlines such a format.</p>
+        </div>
+
+        <div data-feature="State transition">
+          <p>Applications, notably those running on mobile devices, can go through different application states, from running to being idle, paused, stopped, discarded, or terminated. Transitions between these states are triggered by the underlying operating system, and hidden from web applications. The <a data-featureid="page-lifecycle">Page Lifecycle</a> proposal seeks to expose application state transitions to applications so that these applications can persist/restore state, enable/disable use of network, etc.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Discontinued features</h2>
+
+        <dl>
+          <dt>Application caches</dt>
+          <dd>The <a data-featureid="appcache">application cache</a> mechanism was introduced in HTML5 to enable access to Web applications offline through the definition of a manifest of files that the browser is expected to keep in its cache. The feature is well deployed but raises security issues and is extremely limited in terms of how much developers can control what gets cached when. The feature was obsoleted in HTML 5.1, and dropped from HTML 5.2, in favor of the <a href="https://www.w3.org/TR/service-workers-1/">Service Workers</a> specification, which defines a much more powerful approach.</dd>
+
+          <dt>Task Scheduling</dt>
+          <dd>The <a data-featureid="task-scheduler">Task Scheduler API</a> made it possible to trigger a task at a specified time via the service worker associated with a Web app. This specification was in scope of the now-closed System Applications Working Group and was shelved as a result.</dd>
+
+          <dt>Geofencing API</dt>
+          <dd>The <a data-featureid="geofencing">Geofencing API</a> made it possible to wake up a Web app when a device enters a specified geographical area. This work has been discontinued, partly out of struggles to find a good approach to permission needs that such an API triggers to protect users against privacy issues. Work on this specification could resume in the future depending on interest from would-be implementers.</dd>
+
+          <dt>Background execution budget</dt>
+          <dd>User agents will restrict the ability for Web applications to run operations in the background so that users remain in control of what an application can do at all times. The <a data-featureid="budget-api">Web Budget API</a> proposed a mechanism by which applications could determine the cost and budget at their disposal to run operations in the background, allowing them to decide whether to perform or postpone these operations. The proposal was shelved for lack of support.</dd>
+        </dl>
+      </section>
+    </main>
+    <script src="../js/generate.js"></script>
+  </body>
+</html>
